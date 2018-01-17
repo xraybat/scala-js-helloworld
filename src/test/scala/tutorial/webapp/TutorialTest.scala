@@ -11,18 +11,16 @@ import org.scalajs.jquery.jQuery
 
 object TutorialTest extends TestSuite {
 
-  // Initialize App
+  // initialise app ui
   TutorialApp.setupUI()
 
   def tests = TestSuite {
     'HelloWorld {
-      assert(jQuery("p:contains('hello, world!')").length == 1)
-
-    } // HelloWorld
+      assert(jQuery("p:contains('hello, world')").length == 1)
+    }
 
     'ButtonClick {
-      def messageCount =
-        jQuery("p:contains('you clicked the button!')").length
+      def messageCount = jQuery("p:contains('you clicked the button!')").length
 
       val button = jQuery("button:contains('click me!')")
       assert(button.length == 1)
@@ -33,6 +31,5 @@ object TutorialTest extends TestSuite {
         assert(messageCount == c)
       }
     } // ButtonClick
-    
   } // tests
 } // TutorialTest
