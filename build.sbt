@@ -16,6 +16,8 @@ libraryDependencies ++= Seq(
 )
 
 skip in packageJSDependencies := false
+// for release optimisation and fullOptJs (vs fastOptJS)
+//set scalaJSStage in Global := FullOptStage
 
 jsDependencies += "org.webjars" % "jquery" % "2.1.4" / "2.1.4/jquery.js"
 
