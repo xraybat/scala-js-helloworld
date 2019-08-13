@@ -33,6 +33,7 @@ object TutorialApp {
   //@JSExportTopLevel("addClickedMessage")
   def addClickedMessage(): Unit = {
     //appendPar(document.body, "you clicked the button!")   // either...
+    println("about to say 'you clicked the button!'")
     jQuery("body").append("<p>you clicked the button!</p>") // ...or
   }
 
