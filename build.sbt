@@ -17,7 +17,8 @@ libraryDependencies ++= Seq(
 )
 
 skip in packageJSDependencies := false
-// for release optimisation and fullOptJs (vs fastOptJS)
+
+// still works?? for release optimisation and fullOptJs (vs fastOptJS)
 //set scalaJSStage in Global := FullOptStage
 
 jsDependencies +=
