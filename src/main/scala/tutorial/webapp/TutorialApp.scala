@@ -10,7 +10,8 @@ package tutorial.webapp
 import org.scalajs.dom
 import dom.document
 //import scala.scalajs.js.annotation.JSExportTopLevel
-import org.scalajs.jquery.jQuery
+import org.querki.jquery._
+//import org.scalajs.jquery.jQuery
 
 object TutorialApp {
   /*def appendPar(targetNode: dom.Node, text: String): Unit = {
@@ -21,20 +22,20 @@ object TutorialApp {
   }*/
 
   def setupUI(): Unit = {
-    //jQuery("#click-me-button").click(() => addClickedMessage()) // was...
+    $("body").append("<p>hello, world</p>")
+    
+    //$("#click-me-button").click(() => addClickedMessage()) // was...
     // ...now, cleaner, and for testing purposes
-    jQuery("""<button type="button">click me!</button>""")        
-      .click(addClickedMessage _)
-      .appendTo(jQuery("body"))
-
-    jQuery("body").append("<p>hello, world</p>")
+    $("""<button type="button">click me!</button>""")        
+      .click(() => addClickedMessage())
+      .appendTo($("body"))
   }
 
   //@JSExportTopLevel("addClickedMessage")
   def addClickedMessage(): Unit = {
     //appendPar(document.body, "you clicked the button!")   // either...
     println("about to say 'you clicked the button!'")
-    jQuery("body").append("<p>you clicked the button!</p>") // ...or
+    $("body").append("<p>you clicked the button!</p>") // ...or
   }
 
   def main(args: Array[String]): Unit = {
@@ -42,7 +43,7 @@ object TutorialApp {
     //appendPar(document.body, "hello, world!") // either...
 
     // initialise app ui
-    jQuery(() => setupUI())                     // ...or
+    $(() => setupUI())                     // ...or
 
   } // main
 } // TutorialApp

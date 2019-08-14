@@ -7,22 +7,22 @@ package tutorial.webapp
 
 import utest._
 
-import org.scalajs.jquery.jQuery
+import org.querki.jquery._
 
 object TutorialTest extends TestSuite {
 
   // initialise app ui
   TutorialApp.setupUI()
 
-  def tests = TestSuite {
-    'HelloWorld {
-      assert(jQuery("p:contains('hello, world')").length == 1)
+  def tests = Tests {
+    'HelloWorld - {
+      assert($("p:contains('hello, world')").length == 1)
     }
 
-    'ButtonClick {
-      def messageCount = jQuery("p:contains('you clicked the button!')").length
+    'ButtonClick - {
+      def messageCount = $("p:contains('you clicked the button!')").length
 
-      val button = jQuery("button:contains('click me!')")
+      val button = $("button:contains('click me!')")
       assert(button.length == 1)
       assert(messageCount == 0)
 
