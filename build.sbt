@@ -4,7 +4,7 @@ name := "Scala.js Tutorial"
 
 version := "1.0-SNAPSHOT"
 
-scalaVersion := "2.12.8" // or any other Scala version >= 2.10.2
+scalaVersion := "2.12.8" // or any other Scala version >= 2.10.2; 2.13.0 causes unresolved dependencies
 
 // This is an application with a main method
 scalaJSUseMainModuleInitializer := true
@@ -25,5 +25,5 @@ jsDependencies +=
 
 jsEnv := new org.scalajs.jsenv.jsdomnodejs.JSDOMNodeJSEnv()
 
-libraryDependencies += "com.lihaoyi" %%% "utest" % "0.6.3" % "test"
+libraryDependencies += "com.lihaoyi" %%% "utest" % "0.7.1" % "test"
 testFrameworks += new TestFramework("utest.runner.Framework")
